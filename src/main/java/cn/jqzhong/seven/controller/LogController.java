@@ -1,4 +1,4 @@
-package cn.jqzhong.seven.controoler;
+package cn.jqzhong.seven.controller;
 
 import cn.jqzhong.seven.bean.Log;
 import cn.jqzhong.seven.mapper.LogMapper;
