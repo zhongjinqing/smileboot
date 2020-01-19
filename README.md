@@ -1,6 +1,6 @@
 # Smileboot
 study springboot with pure smlie
-# Chapter nine - timed task
+# Chapter eight - RabbitMq
 - import dependency
 ```xml
 <dependency>
