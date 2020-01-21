@@ -1,5 +1,6 @@
 package cn.jqzhong.eight.sender;
 
+import cn.jqzhong.two.bean.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -25,5 +26,13 @@ public class HelloMqSender {
      */
     public void send(String mess) {
         rabbitTemplate.convertAndSend("hello",mess);
+    }
+
+    /**
+     * send user object
+     * @param user user
+     */
+    public void send(User user) {
+        rabbitTemplate.convertAndSend("object",user);
     }
 }

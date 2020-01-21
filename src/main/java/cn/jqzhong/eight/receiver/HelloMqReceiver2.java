@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * @date 2020/1/20 7:07
  */
 @Component
-@RabbitListener(queues = {"hello"})
+//@RabbitListener(queues = {"hello"})
 public class HelloMqReceiver2 {
 
     @RabbitHandler

@@ -131,3 +131,52 @@ public class HelloMqReceiver2 {
 ```
 ---
 #### ---the rest of  rabbitMq will follow soon
+
+### 2020-01-21 continue to study rabbitMq
+##### send object
+1.  config
+```java
+    @Bean
+    public Queue userQueue(){
+        return new Queue("object");
+    }
+```
+2.  sender
+```java
+    /**
+     * send user object
+     * @param user user
+     */
+    public void send(User user) {
+        rabbitTemplate.convertAndSend("object",user);
+    }
+``` 
+3. receiver
+```java
+    -----
+    //class annotation
+    @RabbitListener(queues = {"object","hello"})
+    -----
+    /**
+     * receive object
+     * @param user user
+     */
+    @RabbitHandler
+    public void receiveMess(User user){
+        System.out.println("Receiver: " + user);
+    }
+```
+#####Topic Exchange
+- config
+> cn.jqzhong.eight.config.RabbitMqConfig
+
+- sender
+>cn.jqzhong.eight.sender.TopicSender
+- receiver
+>cn.jqzhong.eight.receiver.TopicReceiver
+- test
+>cn.jqzhong.eight.controller.RabbitMqController
+>@RequestMapping("mess-Topic")
+
+----
+#### go home for the Spring Festival 
