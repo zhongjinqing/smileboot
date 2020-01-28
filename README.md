@@ -190,3 +190,30 @@ public class HelloMqReceiver2 {
 - test
 >cn.jqzhong.eight.controller.RabbitMqController
 >@RequestMapping("mess-fanout")
+
+----
+####SchedulerTask 
+- config
+>cn.jqzhong.nine.config.SchedulerTaskConfig
+```java
+@Configuration
+@EnableScheduling
+public class SchedulerTaskConfig {
+
+}
+```
+- task
+>cn.jqzhong.nine.tasks.SchedulerTask
+```java
+@Component
+public class SchedulerTask {
+
+    /**
+     * taskOne start at
+     */
+    @Scheduled(cron="* 44 20 * * ?")
+    private void taskOne(){
+        System.out.println("this is scheduler task runing  in 20:44:00 - 20:45:00");
+    }
+}
+```
