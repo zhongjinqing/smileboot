@@ -180,3 +180,13 @@ public class HelloMqReceiver2 {
 
 ----
 #### go home for the Spring Festival 
+######Fanout Exchange
+- config
+>cn.jqzhong.eight.config.FanoutConfig
+- sender
+>cn.jqzhong.eight.sender.FanoutSender
+- receiver
+>cn.jqzhong.eight.sender.FanoutReceiver
+- test
+>cn.jqzhong.eight.controller.RabbitMqController
+>@RequestMapping("mess-fanout")

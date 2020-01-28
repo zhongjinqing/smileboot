@@ -1,5 +1,6 @@
 package cn.jqzhong.eight.controller;
 
+import cn.jqzhong.eight.sender.FanoutSender;
 import cn.jqzhong.eight.sender.HelloMqSender;
 import cn.jqzhong.eight.sender.HelloMqSender2;
 import cn.jqzhong.eight.sender.TopicSender;
@@ -31,6 +32,8 @@ public class RabbitMqController {
 
     @Autowired
     TopicSender topicSender;
+    @Autowired
+    FanoutSender fanoutSender;
     /**
      * send mess
      * @param mess user mess
@@ -89,5 +92,9 @@ public class RabbitMqController {
             }
 
         }
+    }
+    @RequestMapping("mess-fanout")
+    public void sendFanout(String type){
+            fanoutSender.sendMessage();
     }
 }
