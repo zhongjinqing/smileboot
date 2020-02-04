@@ -217,3 +217,12 @@ public class SchedulerTask {
     }
 }
 ```
+#### Send Mail
+- config
+>cn.jqzhong.ten.config.MailConfig
+- service
+>cn.jqzhong.ten.service.service.MailService
+>cn.jqzhong.ten.service.serviceImpl.MailServiceImpl
+
+- send 
+>cn.jqzhong.ten.controller.MailController
