@@ -226,3 +226,19 @@ public class SchedulerTask {
 
 - send 
 >cn.jqzhong.ten.controller.MailController
+
+
+#### use Tomcat8
+- edit pom.xml
+```xml
+<packaging>war</packaging>
+```
+- create servletInitializer
+```java
+public class ServletInitializer extends SpringBootServletInitializer {
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(BootApplication.class);
+    }
+}
+```
