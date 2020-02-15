@@ -9,4 +9,7 @@
     <select id="getAll" resultMap="BaseResultMap"  >
         SELECT user_name,password FROM user
     </select>
+    <select id="getByName" resultMap="BaseResultMap"  parameterType="string">
+        SELECT user_name,password FROM user where user_name = #{name}
+    </select>
 </mapper>

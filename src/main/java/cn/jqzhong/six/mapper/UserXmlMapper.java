@@ -11,4 +11,6 @@ import java.util.List;
 public interface UserXmlMapper {
 
     public List<User> getAll();
+
+    public User getByName(String name);
 }
