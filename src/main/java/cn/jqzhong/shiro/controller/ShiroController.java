@@ -57,4 +57,8 @@ public class ShiroController {
         userMapper.insert(user);
         return "add success";
     }
+    @RequestMapping("/delete")
+    public String delete(){
+        return "delete success";
+    }
 }

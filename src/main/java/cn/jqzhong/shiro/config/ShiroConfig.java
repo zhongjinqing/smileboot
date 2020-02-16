@@ -24,7 +24,8 @@ public class ShiroConfig {
         urlFilter.put("/shiro/login","anon");
         urlFilter.put("/shiro/index","anon");
         urlFilter.put("/shiro/user","authc");
-        urlFilter.put("/*/*","authc");
+        urlFilter.put("/*/add","authc,perms[user:add]");
+        urlFilter.put("/*/delete","authc,perms[user:delete]");
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(urlFilter);
         shiroFilterFactoryBean.setLoginUrl("/shiro/login");
